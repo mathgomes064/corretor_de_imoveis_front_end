@@ -1,0 +1,63 @@
+div{
+    background-color: var(--background-modal);
+    width: 14vw;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.slideInLeft {
+-webkit-animation-name: slideInLeft;
+animation-name: slideInLeft;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+@-webkit-keyframes slideInLeft {
+0% {
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+}
+@keyframes slideInLeft {
+0% {
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+} 
+
+.buttonContainer{
+    padding-top: 10px;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    width: 95%;
+    height: 50px;
+    cursor: pointer;
+    background-color: var(--background-color);
+    border: none;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: var(--input-background);
+    transition: 144ms;
+}

@@ -1,0 +1,65 @@
+header{
+    width: 100vw;
+    height: 57px;
+    border-bottom: 2px solid var(--background-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideInDown {
+-webkit-animation-name: slideInDown;
+animation-name: slideInDown;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+@-webkit-keyframes slideInDown {
+0% {
+-webkit-transform: translateY(-100%);
+transform: translateY(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateY(0);
+transform: translateY(0);
+}
+}
+@keyframes slideInDown {
+0% {
+-webkit-transform: translateY(-100%);
+transform: translateY(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateY(0);
+transform: translateY(0);
+}
+} 
+
+div{
+    width: 97%;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+button{
+    width: 70px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: var(--background-modal);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+h1{
+    font-size: 18px;
+    color: var(--white);
+}
