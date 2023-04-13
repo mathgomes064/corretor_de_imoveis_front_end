@@ -1,18 +1,41 @@
 div{
     background-color: var(--background-modal);
-    width: 14vw;
+    width: 15vw;
     height: 100%;
     border-radius: 4px;
-}
-
-.buttonContainer{
-    padding-top: 10px;
-    width: 100%;
-    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.innerDiv{
+    width: 100%;
+    height: 98%;
+}
+
+.statisticsContainer{
+    padding-top: 10px;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+.tittle{
+    width: 95%;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+h2{
+    width: 95%;
+    height: 30px;
+    font-size: 15px;
 }
 
 button{
