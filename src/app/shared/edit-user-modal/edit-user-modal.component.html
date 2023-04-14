@@ -1,0 +1,21 @@
+<ng-container *ngIf="mostrar">
+    <div class="modal fadeIn">
+        <h2>Editar Perfil</h2>
+        <form [formGroup]="updateUserForm" (ngSubmit)="submitUpdateUserForm()">
+            <label for="">Nome</label>
+            <input formControlName="name" id="text" type="text" placeholder="Seu nome">
+    
+            <label for="">Email</label>
+            <input formControlName="email" id="text" type="text" placeholder="example@hotmail.com">
+        
+            <label for="">Senha</label>
+            <input formControlName="senha" id="text" type="password" placeholder="-">
+        
+            <label for="">Contato</label>
+            <input formControlName="contato" id="text" type="tel" placeholder="(00) 00000-0000">
+    
+            <button [disabled]="updateUserForm.invalid" class="atualizar">Atualizar</button>
+        </form>        
+    </div>
+    <div (click)="toggle()" class="overlay"></div>
+</ng-container>
