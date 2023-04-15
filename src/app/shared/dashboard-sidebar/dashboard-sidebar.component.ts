@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard-sidebar',
@@ -16,14 +19,15 @@ export class DashboardSidebarComponent implements OnInit {
   public valorTotalVendido: number = 0
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private http: HttpClient,
+    private router: Router
   ){}
 
   ngOnInit(): void {
     this.authService.getImoveisByUser.subscribe(
       res => {
         this.imoveis = res.imoveis
-        console.log(this.imoveis)
         
         for(let i = 0; i <= this.imoveis.length; i++){
           this.imoveisCadastrados = this.imoveis.length
@@ -35,10 +39,22 @@ export class DashboardSidebarComponent implements OnInit {
           }
           this.valorTotalComprado += this.imoveis[i]['valor_compra']
           this.valorTotalVendido += this.imoveis[i]['valor_venda']
-
         }
       } 
     );
+  }
 
+  public deleteProfile(){
+    const token = localStorage.getItem("access_token")
+    return this.http.delete(`http://localhost:3000/user/${this.authService.userId}`, {
+      headers: {
+        "Authorization": token!
+      }
+    }).subscribe(() =>{
+        return this.router.navigate(['']);
+    }),
+    catchError((err) =>{
+      return throwError(() => console.log(err))
+  })
   }
 }

@@ -12,13 +12,6 @@ import { catchError, throwError } from 'rxjs';
 export class CardsContainerComponent implements OnInit {
   public imoveis: any
 
-  public imoveisCadastrados: number = 0
-  public imoveisEmEstoque: number = 0
-  public imoveisVendidos: number = 0
-  public valorTotalComprado: number = 0
-  public valorTotalVendido: number = 0
-  public lucroTotal: number = 0
-
   constructor(
     private authService: AuthService,
     private http: HttpClient,
