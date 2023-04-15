@@ -5,10 +5,16 @@
                 <h2>Imóveis Cadastrados: {{imoveisCadastrados}}</h2>
                 <h2>Imóveis em Estoque: {{imoveisEmEstoque}}</h2>
                 <h2>Imóveis Vendidos: {{imoveisVendidos}}</h2>
-                <h2>Total de Compra: {{valorTotalComprado}} R$</h2>
-                <h2>Total de Venda: {{valorTotalVendido}} R$</h2>
-                <h2>Lucro Total: {{valorTotalVendido - valorTotalComprado}} R$</h2>
+                <h2>Total de Compra:</h2>
+                <h2>{{valorTotalComprado | currency : 'BRL'}}</h2>
+                <h2>Total de Venda:</h2>
+                <h2>{{valorTotalVendido | currency : 'BRL'}}</h2>
+                <h2>Lucro Total: </h2>
+                <h2>{{valorTotalVendido - valorTotalComprado | currency : 'BRL'}}</h2>
         </div>
-        <button [routerLink]="['/home']">Voltar</button> 
+        <div class="buttonDiv">
+            <button (click)="deleteProfile()">Deletar Perfil</button> 
+            <button [routerLink]="['/home']">Voltar</button> 
+        </div>
     </div>
 </div>

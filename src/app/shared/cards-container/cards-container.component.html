@@ -7,9 +7,9 @@
             </div>
 
             <h2>{{imovel.name}}</h2>
-            <h2>Valor de Compra: {{imovel.valor_compra}}R$</h2>
-            <h2>Valor de Venda: {{imovel.valor_venda}}R$</h2>
-            <h2>Lucro: {{imovel.valor_venda - imovel.valor_compra}}R$</h2>
+            <h2>Valor de Compra: {{imovel.valor_compra | currency : 'BRL'}}</h2>
+            <h2>Valor de Venda: {{imovel.valor_venda | currency : 'BRL'}}</h2>
+            <h2>Lucro: {{imovel.valor_venda - imovel.valor_compra | currency : 'BRL'}}</h2>
             <div class="buttonsDiv">
                 <button (click)="deleteImoveis(imovel.id)">Deletar</button>
                 <button (click)="editImovelModal.toggle()">Editar</button>
