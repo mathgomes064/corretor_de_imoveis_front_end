@@ -1,0 +1,24 @@
+<ng-container *ngIf="mostrar">
+    <div class="modal fadeIn">
+        <h2>Cadastrar Imóvel</h2>
+        <form [formGroup]="registerImovelForm" (ngSubmit)="submitRegisterImovelForm()">
+            <label for="">Imagem</label>
+            <input formControlName="image" id="text" type="text" placeholder="url da imagem">
+
+            <label for="">Nome do Imóvel</label>
+            <input formControlName="name" id="text" type="text" placeholder="-">
+    
+            <label for="">Valor de Compra</label>
+            <input formControlName="valor_compra" id="text" type="number" placeholder="R$">
+        
+            <label for="">Valor de Venda</label>
+            <input formControlName="valor_venda" id="text" type="number" placeholder="-">
+    
+            <label for="">Descrição</label>
+            <input formControlName="description" id="text" type="text" placeholder="-">
+    
+            <button [disabled]="registerImovelForm.invalid" class="cadastrar">Cadastrar</button>
+        </form>        
+    </div>
+    <div (click)="toggle()" class="overlay"></div>
+</ng-container>

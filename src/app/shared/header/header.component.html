@@ -1,6 +1,6 @@
 <header class="slideInDown">
     <div>
-        <h1>Bem Vindo! Matheus Gomes</h1> 
-        <button [routerLink]="['']">Sair</button>
+        <h1>Bem Vindo! {{userData?.name}}</h1> 
+        <button (click)="deslogar()">Sair</button>
     </div>
 </header>

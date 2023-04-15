@@ -6,7 +6,8 @@
     --white: #FFFF;
     --black: #000000;
     --button-1: #FF577F;
-    --button-2: #868E96
+    --button-2: #868E96;
+    --error: red;
 }
 
 /* animações */

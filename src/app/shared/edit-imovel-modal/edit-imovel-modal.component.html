@@ -1,0 +1,22 @@
+<ng-container *ngIf="mostrar">
+    <div class="modal fadeIn">
+        <h2>Editar Imóvel</h2>
+        <form action="">
+            <label for="">Nome do Imóvel</label>
+            <input id="text" type="text" placeholder="-">
+    
+            <label for="">Valor de Compra</label>
+            <input id="text" type="number" placeholder="R$">
+        
+            <label for="">Valor de Venda</label>
+            <input id="text" type="number" placeholder="-">
+    
+        
+            <label for="">Descrição</label>
+            <input id="text" type="text" placeholder="-">
+    
+            <button class="editar">Editar</button>
+        </form>        
+    </div>
+    <div (click)="toggle()" class="overlay"></div>
+</ng-container>

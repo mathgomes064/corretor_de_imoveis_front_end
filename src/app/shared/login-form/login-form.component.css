@@ -60,6 +60,11 @@ span{
     color: var(--button-2);
 }
 
+.error{
+    color: var(--error);
+    margin: 10px 0;
+}
+
 .cadastrar{
 margin-top: 20px;
 width: 90%;

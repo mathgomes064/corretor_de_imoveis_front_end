@@ -3,8 +3,16 @@
     <app-header></app-header>
     <section>
         <div>
-            <side-bar></side-bar>
+            <div class="slideInLeft sidebarDiv">
+                <div class="buttonContainer">
+                    <button (click)="editUserModal.toggle()">Editar usuário</button>
+                    <button (click)="registerImovelModal.toggle()">Cadastrar Imóvel</button>
+                    <button [routerLink]="['/dashboard']">Acessar Dashboard</button> 
+                </div>
+            </div>
             <cards-container></cards-container>
+            <app-edit-user-modal #editUserModal></app-edit-user-modal>
+            <app-register-imovel-modal #registerImovelModal></app-register-imovel-modal>
         </div>
     </section>
 </main>
