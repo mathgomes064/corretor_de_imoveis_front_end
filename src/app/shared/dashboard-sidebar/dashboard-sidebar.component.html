@@ -2,12 +2,12 @@
     <div class="innerDiv">
         <div class="statisticsContainer">
                 <h2 class="tittle">Estatísticas</h2>
-                <h2>Imóveis Cadastrados: 5</h2>
-                <h2>Imóveis em Estoque: 3</h2>
-                <h2>Imóveis Vendidos: 2</h2>
-                <h2>Total de Compra: 320.000 R$</h2>
-                <h2>Total de Venda: 450.000 R$</h2>
-                <h2>Lucro Total: 130.000 R$</h2>
+                <h2>Imóveis Cadastrados: {{imoveisCadastrados}}</h2>
+                <h2>Imóveis em Estoque: {{imoveisEmEstoque}}</h2>
+                <h2>Imóveis Vendidos: {{imoveisVendidos}}</h2>
+                <h2>Total de Compra: {{valorTotalComprado}} R$</h2>
+                <h2>Total de Venda: {{valorTotalVendido}} R$</h2>
+                <h2>Lucro Total: {{valorTotalVendido - valorTotalComprado}} R$</h2>
         </div>
         <button [routerLink]="['/home']">Voltar</button> 
     </div>
