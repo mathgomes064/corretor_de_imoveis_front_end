@@ -25,13 +25,13 @@ export class RegisterImovelModalComponent {
     description: ['', [Validators.required]],
     valor_compra: ['', [Validators.required]],
     valor_venda: ['', [Validators.required]],
+    status: ['', [Validators.required]],
   })
 
   public submitRegisterImovelForm(){
     if(this.registerImovelForm.valid){
-      console.log(this.registerImovelForm.value)
       this.authService.registerImovel({
-        status: true,
+        status: this.registerImovelForm.value.status,
         image: this.registerImovelForm.value.image,
         name: this.registerImovelForm.value.name,
         description: this.registerImovelForm.value.description,

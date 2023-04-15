@@ -2,7 +2,7 @@
     <ul class="innerContainer" id="wrap">
         <li *ngFor="let imovel of imoveis" class="card">
             <div class="imgDiv">
-                <h2 class="status">Em Estoque</h2>
+                <h2 class="status">{{imovel.status}}</h2>
                 <img src={{imovel.image}} alt="Imóvel">
             </div>
 
@@ -13,7 +13,6 @@
             <div class="buttonsDiv">
                 <button (click)="deleteImoveis(imovel.id)">Deletar</button>
                 <button (click)="editImovelModal.toggle()">Editar</button>
-                <button>Vender</button>
             </div>
         </li>
     </ul>

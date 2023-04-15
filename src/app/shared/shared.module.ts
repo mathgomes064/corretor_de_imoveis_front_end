@@ -11,6 +11,7 @@ import { EditUserModalComponent } from './edit-user-modal/edit-user-modal.compon
 import { RegisterImovelModalComponent } from './register-imovel-modal/register-imovel-modal.component';
 import { EditImovelModalComponent } from './edit-imovel-modal/edit-imovel-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

@@ -2,6 +2,12 @@
     <div class="modal fadeIn">
         <h2>Cadastrar Imóvel</h2>
         <form [formGroup]="registerImovelForm" (ngSubmit)="submitRegisterImovelForm()">
+            <label for="">Status</label>
+            <select formControlName="status">
+                <option value="Em Estoque">Em Estoque</option>
+                <option value="Vendido">Vendido</option>
+            </select>
+            
             <label for="">Imagem</label>
             <input formControlName="image" id="text" type="text" placeholder="url da imagem">
 
@@ -16,7 +22,7 @@
     
             <label for="">Descrição</label>
             <input formControlName="description" id="text" type="text" placeholder="-">
-    
+
             <button [disabled]="registerImovelForm.invalid" class="cadastrar">Cadastrar</button>
         </form>        
     </div>

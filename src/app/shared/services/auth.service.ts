@@ -97,22 +97,6 @@ export class AuthService {
     )
   }
 
-  // public deleteImoveis(imovelId: string): Observable<any>{
-  //   const token = localStorage.getItem("access_token")
-  //   return this.http.delete(`${this.url}/imoveis/${imovelId}`, {
-  //     headers: {
-  //       "Authorization": token!
-  //     }
-  //   }).pipe(
-  //     map((res) =>{
-  //       return window.location.reload();
-  //     }),
-  //     catchError((err) =>{
-  //         return throwError(() => console.log(err))
-  //     })
-  //   )
-  // }
-
   public deslogar(){
     localStorage.clear()
     return this.router.navigate([''])
