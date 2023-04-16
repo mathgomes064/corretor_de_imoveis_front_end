@@ -1,7 +1,7 @@
 <div class="containerCard fadeIn">
     <ul class="innerContainer" id="wrap">
         <li *ngFor="let imovel of imoveis" class="card">
-            <div class="imgDiv">
+            <div [routerLink]="['/imovel', imovel.id]" class="imgDiv">
                 <h2 class="status">{{imovel.status}}</h2>
                 <img src={{imovel.image}} alt="Imóvel">
             </div>
