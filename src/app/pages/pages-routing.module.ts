@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
+import { DetailImovelComponent } from './detail-imovel/detail-imovel.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
     path: "dashboard",
     canActivate: [AuthGuard],
     component: DashboardComponent
+  },
+  {
+    path: "imovel/:id",
+    canActivate: [AuthGuard],
+    component: DetailImovelComponent
   }
 ];
 

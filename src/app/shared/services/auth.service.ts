@@ -97,6 +97,17 @@ export class AuthService {
     )
   }
 
+  public getImovelById(url: string): Observable<any>{
+    const token = localStorage.getItem("access_token")
+    return this.http.get<any>(url, {
+      headers: {
+        "Authorization": token!
+      }
+    }).pipe(
+      map(res => res),
+    )
+  }
+
   public deslogar(){
     localStorage.clear()
     return this.router.navigate([''])
