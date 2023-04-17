@@ -20,7 +20,6 @@ export class DetailImovelComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    // this.getImovel
     const id = this.activatedRoute.snapshot.params['id']
     this.authService.getImovelById(`${this.url}/imoveis/${id}`).subscribe(
       data => this.imovel = data
