@@ -10,6 +10,8 @@ import { catchError, throwError } from 'rxjs';
 })
 
 export class CardsContainerComponent implements OnInit {
+
+  public url: string = "https://corretor-de-imoveis.onrender.com"
   public imoveis: any
 
   constructor(
@@ -28,7 +30,7 @@ export class CardsContainerComponent implements OnInit {
   
   public deleteImoveis(imovelId: string){
     const token = localStorage.getItem("access_token")
-    return this.http.delete(`http://localhost:3000/imoveis/${imovelId}`, {
+    return this.http.delete(`${this.url}/imoveis/${imovelId}`, {
       headers: {
         "Authorization": token!
       }

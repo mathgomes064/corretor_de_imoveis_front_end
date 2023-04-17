@@ -9,7 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  private url: string = "http://localhost:3000";
+  private url: string = "https://corretor-de-imoveis.onrender.com";
 
   constructor(
     private http: HttpClient,

@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./detail-imovel.component.css']
 })
 export class DetailImovelComponent implements OnInit {
-  private url: string = 'http://localhost:3000/imoveis'
+  private url: string = 'https://corretor-de-imoveis.onrender.com'
 
   public imovel: any
 
@@ -27,7 +27,7 @@ export class DetailImovelComponent implements OnInit {
 
     const id = this.activatedRoute.snapshot.params['id']
 
-    const imovel = this.authService.getImovelById(`${this.url}/${id}`)
+    const imovel = this.authService.getImovelById(`${this.url}/imoveis/${id}`)
 
     return forkJoin([imovel]).subscribe(
       res => {

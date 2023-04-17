@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-sidebar.component.css']
 })
 export class DashboardSidebarComponent implements OnInit {
+  public url: string = "https://corretor-de-imoveis.onrender.com"
   public imoveis: any
 
   public imoveisCadastrados: number = 0
@@ -46,7 +47,7 @@ export class DashboardSidebarComponent implements OnInit {
 
   public deleteProfile(){
     const token = localStorage.getItem("access_token")
-    return this.http.delete(`http://localhost:3000/user/${this.authService.userId}`, {
+    return this.http.delete(`${this.url}/user/${this.authService.userId}`, {
       headers: {
         "Authorization": token!
       }

@@ -13,13 +13,13 @@
                     <div class="statistics">
                         <div class="imgDiv">
                             <h2 class="status">{{imovel[0].status}}</h2>
-                            <img src={{imovel[0].image}} alt="Imóvel">
+                            <img src={{imovel[0]?.image}} alt="Imóvel">
                         </div>
                         <div class="values">
-                            <h2>Nome: {{imovel[0].name}}</h2>
-                            <h2>Valor de Compra: {{imovel[0].valor_compra | currency : 'BRL'}}</h2>
-                            <h2>Valor de Venda: {{imovel[0].valor_venda | currency : 'BRL'}}</h2>
-                            <h2>Lucro Total: {{imovel[0].valor_venda - imovel[0].valor_compra | currency : 'BRL'}}</h2>
+                            <h2>Nome: {{imovel[0]?.name}}</h2>
+                            <h2>Valor de Compra: {{imovel[0]?.valor_compra | currency : 'BRL'}}</h2>
+                            <h2>Valor de Venda: {{imovel[0]?.valor_venda | currency : 'BRL'}}</h2>
+                            <h2>Lucro Total: {{imovel[0]?.valor_venda - imovel[0].valor_compra | currency : 'BRL'}}</h2>
                         </div>
                     </div>
                     <div class="description">
