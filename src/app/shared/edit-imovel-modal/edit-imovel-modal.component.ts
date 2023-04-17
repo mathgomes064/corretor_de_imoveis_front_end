@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-edit-imovel-modal',
@@ -8,10 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./edit-imovel-modal.component.css']
 })
 export class EditImovelModalComponent {
+  public url: string = "https://corretor-de-imoveis.onrender.com"
+
   mostrar: boolean = false;
 
-  toggle(){
+  public imovelId!: string | undefined
+
+  toggle(id: string | undefined = undefined){
     this.mostrar = !this.mostrar;
+    this.imovelId = id
   }
 
   constructor(
@@ -27,32 +33,26 @@ export class EditImovelModalComponent {
     status: ['', [Validators.required]],
   })
 
-  // public updateImovel(payload: {status: string, name: string, description: string, valor_venda: number, valor_compra: number}){
-  //   const token = localStorage.getItem("access_token")
-  //   return this.http.patch(`http://localhost:3000/imoveis`, payload, {
-  //     headers: {
-  //       "Authorization": token!
-  //     }
-  //   }).subscribe(() =>{
-  //     return window.location.reload();
-  //   }),
-  //   catchError((err) =>{
-  //     return throwError(() => console.log(err))
-  // })
-  // }
+  public updateImovel(payload: {status: string, name: string, description: string, valor_venda: number, valor_compra: number}){
+    const token = localStorage.getItem("access_token")
+    return this.http.patch(`${this.url}/imoveis/${this.imovelId}`, JSON.stringify(payload), {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": token!
+      }
+    })
+  }
 
   public submitEditImovelForm(){
       if(this.editImovelForm.valid){
-        // this.updateImovel({
-        //   status: this.editImovelForm.value.status,
-        //   name: this.editImovelForm.value.name,
-        //   description: this.editImovelForm.value.description,
-        //   valor_compra: this.editImovelForm.value.valor_compra,
-        //   valor_venda: this.editImovelForm.value.valor_venda,
-        // }).subscribe({
-        //   next: (res) => res,
-        //   error: (err) => err
-        // })
+        this.updateImovel({
+          ...this.editImovelForm.value
+        }).subscribe(() =>{
+          return window.location.reload();
+        }),
+        catchError((err) =>{
+          return throwError(() => console.log(err))
+      })
       }
   }
 

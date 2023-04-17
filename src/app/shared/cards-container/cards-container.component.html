@@ -12,7 +12,7 @@
             <h2>Lucro: {{imovel.valor_venda - imovel.valor_compra | currency : 'BRL'}}</h2>
             <div class="buttonsDiv">
                 <button (click)="deleteImoveis(imovel.id)">Deletar</button>
-                <button (click)="editImovelModal.toggle()">Editar</button>
+                <button (click)="editImovelModal.toggle(imovel.id)">Editar</button>
             </div>
         </li>
     </ul>
