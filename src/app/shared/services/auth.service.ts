@@ -103,9 +103,7 @@ export class AuthService {
       headers: {
         "Authorization": token!
       }
-    }).pipe(
-      map(res => res),
-    )
+    })
   }
 
   public deslogar(){
