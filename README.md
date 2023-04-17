@@ -1,5 +1,11 @@
 # CorretorDeImoveisFrontEnd
 
+IMPORTANTE*
+
+Após clonar o repositório rodar o comando npm install para instalar a node modules.
+
+Em seguinda rode o comando ng s para rodar a aplicação. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
 ## Development server
