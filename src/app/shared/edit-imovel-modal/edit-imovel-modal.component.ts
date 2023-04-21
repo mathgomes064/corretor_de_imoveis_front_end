@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { catchError, throwError } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-edit-imovel-modal',
@@ -9,20 +10,19 @@ import { catchError, throwError } from 'rxjs';
   styleUrls: ['./edit-imovel-modal.component.css']
 })
 export class EditImovelModalComponent {
-  public url: string = "https://corretor-de-imoveis.onrender.com"
-
   mostrar: boolean = false;
 
-  public imovelId!: string | undefined
+  public imovelIdtoUpdate!: string | undefined
 
   toggle(id: string | undefined = undefined){
     this.mostrar = !this.mostrar;
-    this.imovelId = id
+    this.imovelIdtoUpdate = id
   }
 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
+    private authService: AuthService
   ){}
 
   public editImovelForm: FormGroup = this.formBuilder.group({
@@ -35,7 +35,7 @@ export class EditImovelModalComponent {
 
   public updateImovel(payload: {status: string, name: string, description: string, valor_venda: number, valor_compra: number}){
     const token = localStorage.getItem("access_token")
-    return this.http.patch(`${this.url}/imoveis/${this.imovelId}`, JSON.stringify(payload), {
+    return this.http.patch(`${this.authService.url}/imoveis/${this.imovelIdtoUpdate}`, JSON.stringify(payload), {
       headers: {
         "Content-Type": "application/json",
         "Authorization": token!

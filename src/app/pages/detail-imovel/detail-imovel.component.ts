@@ -10,9 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./detail-imovel.component.css']
 })
 export class DetailImovelComponent implements OnInit {
-  private url: string = 'https://corretor-de-imoveis.onrender.com'
-
-  public imovel: any
+  public detailImovel: any
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,9 +19,8 @@ export class DetailImovelComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id']
-    this.authService.getImovelById(`${this.url}/imoveis/${id}`).subscribe(
-      data => this.imovel = data
+    this.authService.getImovelById(`${this.authService.url}/imoveis/${id}`).subscribe(
+      data => this.detailImovel = data
     )
   }
-
 }

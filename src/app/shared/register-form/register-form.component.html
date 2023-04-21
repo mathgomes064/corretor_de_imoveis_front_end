@@ -1,24 +1,29 @@
 <section class="container fadeIn">
-    <h2>Cadastrar</h2>
-
-    <span>Rápido e grátis, vamos nessa!</span>
+    <div>
+        <h2>Cadastrar</h2>
+    
+        <span>Rápido e grátis, vamos nessa!</span>
+    </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
         <label for="">Nome</label>
         <input formControlName="name" id="text" type="text" placeholder="Seu nome">
+        <span class="errorMessage" *ngIf="isNameValid">Nome Obrigatório</span>
 
         <label for="">Email</label>
         <input formControlName="email" id="text" type="text" placeholder="example@hotmail.com">
-    
+        <span class="errorMessage" *ngIf="isEmailValid">Email Obrigatório</span>
+
         <label for="">Senha</label>
         <input formControlName="senha" id="text" type="password" placeholder="-">
+        <span class="errorMessage" *ngIf="isSenhaValid">Senha Obrigatória</span>
 
-    
         <label for="">Contato</label>
         <input formControlName="contato" id="text" type="tel" placeholder="(00) 00000-0000">
+        <span class="errorMessage" *ngIf="isContatoValid">Contato Obrigatório</span>
 
-        <button [disabled]="registerForm.invalid" class="cadastrar">Cadastrar</button>
+        <button class="cadastrar">Cadastrar</button>
+        <button [routerLink]="['']" class="voltar">Voltar</button>
     </form>
 
-    <button [routerLink]="['']" class="voltar">Voltar</button>
 </section>
