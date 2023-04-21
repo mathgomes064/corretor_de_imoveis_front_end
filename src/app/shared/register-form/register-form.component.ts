@@ -16,6 +16,8 @@ export class RegisterFormComponent implements OnInit {
   public isSenhaValid: boolean = false;
   public isContatoValid: boolean = false;
 
+  public hide: boolean = true;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService

@@ -5,3 +5,8 @@ export class IUserCreate{
     senha: string = "";
     contato: string = "";
 }
+
+export class IUserLogin{
+    email: string = "";
+    senha: string = "";
+}

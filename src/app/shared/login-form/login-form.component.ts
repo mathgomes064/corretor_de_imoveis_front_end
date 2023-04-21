@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
+import { IUserLogin } from '../models';
 
 @Component({
   selector: 'login-form',
@@ -8,30 +9,49 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
+  loginForm!: FormGroup;
+
+  public isEmailValid: boolean = false;
+  public isSenhaValid: boolean = false;
+
+  public hide: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService
   ){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.createLoginForm(new IUserLogin())
+  }
 
-  public formAuth: FormGroup = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
-    senha: ['', [Validators.required]],
-
-  })
+  public createLoginForm(register: IUserLogin){
+    this.loginForm = this.formBuilder.group({
+      email: [register.email, [Validators.required, Validators.email]],
+      senha: [register.senha, [Validators.required]],
+    })
+  }
 
   public mesgError: boolean = false;
 
   public submitForm(){
-    if(this.formAuth.valid){
+    const emailValid = this.loginForm.get("email");
+    const senhaValid = this.loginForm.get("senha");
+
+    if(emailValid?.errors){
+      this.isEmailValid = !this.isEmailValid;
+    }
+
+    if(senhaValid?.errors){
+      this.isSenhaValid = !this.isSenhaValid;
+    }
+
+    if(this.loginForm.valid){
       this.authService.logar({
-        email: this.formAuth.value.email,
-        senha: this.formAuth.value.senha,
+        ...this.loginForm.value
       }).subscribe({
         next: (res) => res,
-        error: (err) => (this.mesgError = !this.mesgError) 
+        error: (err) => err,
       })
     }
   }
