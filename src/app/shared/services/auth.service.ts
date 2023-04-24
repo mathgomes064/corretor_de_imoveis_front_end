@@ -54,9 +54,8 @@ export class AuthService {
       }
     }).pipe(
       tap(res => res),
-      tap(res => this.userId = res.id)
-    )
-  }
+      tap(res => this.userId = res.id),
+  )}
 
   public updateUserData(payload: {name: string, email: string, senha: string, contato: string}): Observable<any>{
     const token = localStorage.getItem("access_token")

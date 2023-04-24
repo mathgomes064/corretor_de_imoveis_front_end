@@ -1,3 +1,5 @@
+@import "../../../style/reset.css";
+
 header{
     width: 100vw;
     height: 57px;
@@ -13,7 +15,6 @@ div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 button{
