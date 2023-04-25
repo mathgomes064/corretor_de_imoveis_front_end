@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from '../services/auth.service';
-import { IUserLogin } from '../models';
+import { userLogin } from '../models';
 
 @Component({
   selector: 'login-form',
@@ -22,10 +22,10 @@ export class LoginFormComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.createLoginForm(new IUserLogin())
+    this.createLoginForm(new userLogin())
   }
 
-  public createLoginForm(register: IUserLogin){
+  public createLoginForm(register: userLogin){
     this.loginForm = this.formBuilder.group({
       email: [register.email, [Validators.required, Validators.email]],
       senha: [register.senha, [Validators.required]],

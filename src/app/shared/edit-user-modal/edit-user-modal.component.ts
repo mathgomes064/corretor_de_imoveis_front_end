@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { IUserEditLogin } from '../models';
+import { userEdit } from '../models';
 
 @Component({
   selector: 'app-edit-user-modal',
@@ -9,23 +9,26 @@ import { IUserEditLogin } from '../models';
   styleUrls: ['./edit-user-modal.component.css']
 })
 export class EditUserModalComponent implements OnInit{
-  mostrar: boolean = false;
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ){}
+
+  ngOnInit(): void {
+    this.authService.getUserData.subscribe(
+      res =>{
+        this.editUserForm(res)
+      }
+    )
+  }
+
+  public mostrar: boolean = false;
+  public hide: boolean = true;
 
   toggle(){
     this.mostrar = !this.mostrar;
   }
-  public userData: any
-  
-  ngOnInit(): void {
-    this.authService.getUserData.subscribe(
-      res =>{
-        this.userData = res
-        console.log(this.userData)
-      }
-    )
-    this.editUserForm(new IUserEditLogin())
-  }
-    
+   
   updateUserForm!: FormGroup;
 
   public isNameValid: boolean = false;
@@ -33,20 +36,11 @@ export class EditUserModalComponent implements OnInit{
   public isSenhaValid: boolean = false;
   public isContatoValid: boolean = false;
 
-  public name: string = "Matheus"
-
-  public hide: boolean = true;
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService
-  ){}
-
-  public editUserForm(register: IUserEditLogin){
+  public editUserForm(register: userEdit){
     this.updateUserForm = this.formBuilder.group({
       name: [register.name, [Validators.required]],
       email: [register.email, [Validators.required, Validators.email]],
-      senha: [register.senha, [Validators.required]],
+      senha: ["", [Validators.required]],
       contato: [register.contato, [Validators.required]],
     })
   }

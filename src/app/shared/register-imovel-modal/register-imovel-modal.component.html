@@ -7,23 +7,29 @@
                 <option value="Em Estoque">Em Estoque</option>
                 <option value="Vendido">Vendido</option>
             </select>
+            <span class="errorMessage" *ngIf="isStatusValid">Status Obrigatório</span>
             
             <label for="">Imagem</label>
-            <input formControlName="image" id="text" type="text" placeholder="url da imagem">
+            <input formControlName="image" id="text" type="text" placeholder="Url da Imagem">
+            <span class="errorMessage" *ngIf="isImgValid">Imagem Obrigatório</span>
 
             <label for="">Nome do Imóvel</label>
             <input formControlName="name" id="text" type="text" placeholder="-">
-    
+            <span class="errorMessage" *ngIf="isNameValid">Nome do Imóvel Obrigatória</span>
+            
             <label for="">Valor de Compra</label>
             <input formControlName="valor_compra" id="text" type="number" placeholder="R$">
-        
+            <span class="errorMessage" *ngIf="isValorCompraValid">Valor de Compra Obrigatória</span>
+            
             <label for="">Valor de Venda</label>
-            <input formControlName="valor_venda" id="text" type="number" placeholder="-">
-    
+            <input formControlName="valor_venda" id="text" type="number" placeholder="R$">
+            <span class="errorMessage" *ngIf="isValorVendaValid">Valor de Venda Obrigatória</span>
+            
             <label for="">Descrição</label>
-            <input formControlName="description" id="text" type="text" placeholder="-">
+            <input formControlName="description" id="text" type="text" placeholder="Descrição do Imovel">
+            <span class="errorMessage" *ngIf="isDescriptionValid">Descrição Obrigatória</span>
 
-            <button [disabled]="registerImovelForm.invalid" class="cadastrar">Cadastrar</button>
+            <button class="cadastrar">Cadastrar</button>
         </form>        
     </div>
     <div (click)="toggle()" class="overlay"></div>

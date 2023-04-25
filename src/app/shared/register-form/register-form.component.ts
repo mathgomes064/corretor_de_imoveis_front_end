@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { IUserCreate } from '../models';
+import { userCreate } from '../models';
 
 @Component({
   selector: 'register-form',
@@ -24,10 +24,10 @@ export class RegisterFormComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.createRegisterForm(new IUserCreate())
+    this.createRegisterForm(new userCreate())
   }
 
-  public createRegisterForm(register: IUserCreate){
+  public createRegisterForm(register: userCreate){
     this.registerForm = this.formBuilder.group({
       name: [register.name, [Validators.required]],
       email: [register.email, [Validators.required, Validators.email]],

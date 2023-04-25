@@ -3,11 +3,11 @@
         <h2>Editar Perfil</h2>
         <form [formGroup]="updateUserForm" (ngSubmit)="submitUpdateUserForm()">
             <label for="">Nome</label>
-            <input formControlName="name" id="text" type="text" placeholder={{userData.name}}>
+            <input formControlName="name" id="text" type="text" placeholder="Seu Nome">
             <span class="errorMessage" *ngIf="isNameValid">Nome Obrigatório</span>
 
             <label for="">Email</label>
-            <input formControlName="email" id="text" type="text" placeholder={{userData.email}}>
+            <input formControlName="email" id="text" type="text" placeholder="Seu Email">
             <span class="errorMessage" *ngIf="isEmailValid">Email Obrigatório</span>
             
             <label for="">Senha</label>
@@ -18,10 +18,10 @@
             <span class="errorMessage" *ngIf="isSenhaValid">Senha Obrigatória</span>
             
             <label for="">Contato</label>
-            <input formControlName="contato" id="text" type="tel" placeholder={{userData.contato}}>
+            <input formControlName="contato" id="text" type="tel" placeholder="Seu Contato">
             <span class="errorMessage" *ngIf="isContatoValid">Contato Obrigatório</span>
             
-            <button class="atualizar">Atualizar</button>
+            <button type="submit" class="atualizar">Atualizar</button>
         </form>        
     </div>
     <div (click)="toggle()" class="overlay"></div>
