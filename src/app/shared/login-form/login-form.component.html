@@ -1,16 +1,21 @@
 <section class="container fadeIn">
     <h2>Login</h2>
 
-    <form [formGroup]="formAuth" (ngSubmit)="submitForm()">
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
         <label for="">Email</label>
         <input formControlName="email" id="text" type="email" placeholder="example@hotmail.com" required>
-    
-        <label for="">Senha</label>
-        <input formControlName="senha" id="text" type="password" placeholder="-" required>
+        <span class="errorMessage" *ngIf="isEmailValid">Email Obrigatório</span>
 
-        <button [disabled]="formAuth.invalid" class="entrar">Entrar</button>
+        <label for="">Senha</label>
+        <div class="inputDiv">
+            <input class="inputPassword" formControlName="senha" id="text" type="password" [type]="hide ? 'password':'text'" placeholder="Sua Senha" required>
+            <i class="material-icons" matSuffix (click)="hide = !hide">{{hide ? 'visibility':'visibility_off'}}</i>
+        </div>
+        
+        <span class="errorMessage" *ngIf="isSenhaValid">Senha Obrigatória</span>
+
+        <button class="entrar">Entrar</button>
     </form>
-    <span class="error" *ngIf="mesgError">Usuário ou senha incorreta</span>
 
     <span>Ainda não possui uma conta?</span>
 

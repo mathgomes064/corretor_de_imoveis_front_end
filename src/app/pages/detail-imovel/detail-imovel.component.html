@@ -12,18 +12,18 @@
                 <div class="card">
                     <div class="statistics">
                         <div class="imgDiv">
-                            <h2 class="status">{{imovel.status}}</h2>
-                            <img src={{imovel?.image}} alt="Imóvel">
+                            <h2 class="status">{{detailImovel.status}}</h2>
+                            <img src={{detailImovel?.image}} alt="Imóvel">
                         </div>
                         <div class="values">
-                            <h2>Nome: {{imovel?.name}}</h2>
-                            <h2>Valor de Compra: {{imovel?.valor_compra | currency : 'BRL'}}</h2>
-                            <h2>Valor de Venda: {{imovel?.valor_venda | currency : 'BRL'}}</h2>
-                            <h2>Lucro Total: {{imovel?.valor_venda - imovel.valor_compra | currency : 'BRL'}}</h2>
+                            <h2>Nome: {{detailImovel?.name}}</h2>
+                            <h2>Valor de Compra: {{detailImovel?.valor_compra | currency : 'BRL'}}</h2>
+                            <h2>Valor de Venda: {{detailImovel?.valor_venda | currency : 'BRL'}}</h2>
+                            <h2>Lucro Total: {{detailImovel?.valor_venda - detailImovel.valor_compra | currency : 'BRL'}}</h2>
                         </div>
                     </div>
                     <div class="description">
-                        <h2>Descrição: {{imovel.description}}</h2>
+                        <h2>Descrição: {{detailImovel.description}}</h2>
                     </div>
                 </div>
             </div>

@@ -3,18 +3,25 @@
         <h2>Editar Perfil</h2>
         <form [formGroup]="updateUserForm" (ngSubmit)="submitUpdateUserForm()">
             <label for="">Nome</label>
-            <input formControlName="name" id="text" type="text" placeholder="Seu nome">
-    
+            <input formControlName="name" id="text" type="text" placeholder="Seu Nome">
+            <span class="errorMessage" *ngIf="isNameValid">Nome Obrigatório</span>
+
             <label for="">Email</label>
-            <input formControlName="email" id="text" type="text" placeholder="example@hotmail.com">
-        
+            <input formControlName="email" id="text" type="text" placeholder="Seu Email">
+            <span class="errorMessage" *ngIf="isEmailValid">Email Obrigatório</span>
+            
             <label for="">Senha</label>
-            <input formControlName="senha" id="text" type="password" placeholder="-">
-        
+            <div class="inputDiv">
+                <input class="inputPassword" formControlName="senha" id="text" type="password" [type]="hide ? 'password':'text'" placeholder="Sua senha">
+                <i class="material-icons" matSuffix (click)="hide = !hide">{{hide ? 'visibility':'visibility_off'}}</i>
+            </div>
+            <span class="errorMessage" *ngIf="isSenhaValid">Senha Obrigatória</span>
+            
             <label for="">Contato</label>
-            <input formControlName="contato" id="text" type="tel" placeholder="(00) 00000-0000">
-    
-            <button [disabled]="updateUserForm.invalid" class="atualizar">Atualizar</button>
+            <input formControlName="contato" id="text" type="tel" placeholder="Seu Contato">
+            <span class="errorMessage" *ngIf="isContatoValid">Contato Obrigatório</span>
+            
+            <button type="submit" class="atualizar">Atualizar</button>
         </form>        
     </div>
     <div (click)="toggle()" class="overlay"></div>
