@@ -18,6 +18,9 @@ export class EditImovelModalComponent implements OnInit {
   toggle(id: string | undefined = undefined){
     this.mostrar = !this.mostrar;
     this.imovelIdtoUpdate = id
+     this.authService.getImovelById(`${this.authService.url}/imoveis/${id}`).subscribe(
+      res => this.updateImovelForm(res)
+    )
   }
 
   ngOnInit(): void {
