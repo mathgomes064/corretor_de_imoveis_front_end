@@ -1,65 +1,65 @@
 @import "../../../style/reset.css";
 
 div{
-    background-color: var(--background-modal);
-    width: 13vw;
-    height: 100%;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+background-color: var(--background-modal);
+width: 13vw;
+height: 100%;
+border-radius: 4px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
 }
 
 .innerDiv{
-    width: 100%;
-    height: 98%;
+width: 100%;
+height: 98%;
 }
 
 .statisticsContainer{
-    padding-top: 10px;
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
+padding-top: 10px;
+width: 100%;
+height: 40%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+color: var(--white);
 }
 
 .buttonDiv{
-    width: 100%;
-    height: 20%;
+width: 100%;
+height: 20%;
 }
 
 .tittle{
-    width: 95%;
-    height: 30px;
-    font-size: 16px;
-    text-align: center;
-    margin: 10px 0;
+width: 95%;
+height: 30px;
+font-size: 16px;
+text-align: center;
+margin: 10px 0;
 }
 
 h2{
-    width: 95%;
-    height: 30px;
-    font-size: 15px;
-    margin: 5px 0;
-    text-align: center;
+width: 95%;
+height: 30px;
+font-size: 15px;
+margin: 5px 0;
+text-align: center;
 }
 
 button{
-    width: 95%;
-    height: 50px;
-    cursor: pointer;
-    background-color: var(--background-color);
-    border: none;
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
+width: 95%;
+height: 50px;
+cursor: pointer;
+background-color: var(--background-color);
+border: none;
+color: var(--white);
+font-size: 14px;
+font-weight: 700;
 }
 
 button:hover{
-    background-color: var(--input-background);
-    transition: 144ms;
+background-color: var(--input-background);
+transition: 144ms;
 }

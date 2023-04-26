@@ -1,53 +1,53 @@
 main{
-    width: 100vw;
-    height: 100vh;
+width: 100vw;
+height: 100vh;
 }
 
 section{
-    margin-top: 10px;
-    width: 100vw;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+margin-top: 10px;
+width: 100vw;
+height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 div{
-    width: 97.5%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+width: 97.5%;
+height: 100%;
+display: flex;
+justify-content: space-between;
 }
 
 .sidebarDiv{
-    background-color: var(--background-modal);
-    width: 13vw;
-    height: 100%;
-    border-radius: 4px;
+background-color: var(--background-modal);
+width: 13vw;
+height: 100%;
+border-radius: 4px;
 }
 
 .buttonContainer{
-    padding-top: 10px;
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+padding-top: 10px;
+width: 100%;
+height: 30%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
 }
 
 button{
-    width: 95%;
-    height: 50px;
-    cursor: pointer;
-    background-color: var(--background-color);
-    border: none;
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
+width: 95%;
+height: 50px;
+cursor: pointer;
+background-color: var(--background-color);
+border: none;
+color: var(--white);
+font-size: 14px;
+font-weight: 700;
 }
 
 button:hover{
-    background-color: var(--input-background);
-    transition: 144ms;
+background-color: var(--input-background);
+transition: 144ms;
 }

@@ -1,13 +1,13 @@
 :root{
-    --background-color: #121214;
-    --background-modal: #212529;
-    --background-components: #212529;
-    --input-background: #343B41;
-    --white: #FFFF;
-    --black: #000000;
-    --button-1: #FF577F;
-    --button-2: #868E96;
-    --error: red;
+--background-color: #121214;
+--background-modal: #212529;
+--background-components: #212529;
+--input-background: #343B41;
+--white: #FFFF;
+--black: #000000;
+--button-1: #FF577F;
+--button-2: #868E96;
+--error: red;
 }
 
 /* animações */
