@@ -1,4 +1,8 @@
 <div class="containerCard fadeIn">
+    <div class="aviso" *ngIf="imoveis.length === 0">
+        <i class="material-icons" matSuffix>settings</i>
+        <h1 class="aviso" >Nenhum imóvel cadastrado no momento...</h1>
+    </div>
     <ul class="innerContainer" id="wrap">
         <li *ngFor="let imovel of imoveis" class="card">
             <div [routerLink]="['/imovel', imovel.id]" class="imgDiv">
