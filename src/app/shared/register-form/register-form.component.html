@@ -6,25 +6,31 @@
     </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()">
-        <label for="">Nome</label>
-        <input formControlName="name" id="text" type="text" placeholder="Seu nome">
-        <span class="errorMessage" *ngIf="isNameValid">Nome Obrigatório</span>
-
-        <label for="">Email</label>
-        <input formControlName="email" id="text" type="text" placeholder="example@hotmail.com">
-        <span class="errorMessage" *ngIf="isEmailValid">Email Obrigatório</span>
-
-        <label for="">Senha</label>
-        <div class="inputDiv">
-            <input class="inputPassword" formControlName="senha" id="text" type="password" [type]="hide ? 'password':'text'" placeholder="Sua senha">
+        <mat-form-field class="inputDivs">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" id="text" type="text" placeholder="Seu nome">
+            <mat-error *ngIf="isNameValid">Nome Obrigatório</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="inputDivs">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" id="text" type="text" placeholder="example@hotmail.com">
+            <mat-error *ngIf="isEmailValid">Email Obrigatório</mat-error>
+        </mat-form-field>
+     
+        <mat-form-field class="inputDivs">
+            <mat-label>Senha</mat-label>
+            <input matInput formControlName="senha" id="text" type="password" [type]="hide ? 'password':'text'" placeholder="Sua senha">
             <i class="material-icons" matSuffix (click)="hide = !hide">{{hide ? 'visibility':'visibility_off'}}</i>
-        </div>
-        <span class="errorMessage" *ngIf="isSenhaValid">Senha Obrigatória</span>
+            <mat-error *ngIf="isSenhaValid">Senha Obrigatória</mat-error>
+        </mat-form-field>
 
-        <label for="">Contato</label>
-        <input formControlName="contato" id="text" type="tel" placeholder="(00) 00000-0000">
-        <span class="errorMessage" *ngIf="isContatoValid">Contato Obrigatório</span>
-
+        <mat-form-field class="inputDivs">
+            <mat-label>Contato</mat-label>
+            <input matInput formControlName="contato" id="text" type="tel" placeholder="(00) 00000-0000">
+            <mat-error *ngIf="isContatoValid">Contato Obrigatória</mat-error>
+        </mat-form-field>
+   
         <button class="cadastrar">Cadastrar</button>
         <button [routerLink]="['']" class="voltar">Voltar</button>
     </form>
