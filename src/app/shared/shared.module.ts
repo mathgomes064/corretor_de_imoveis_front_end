@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
@@ -13,6 +13,7 @@ import { EditImovelModalComponent } from './edit-imovel-modal/edit-imovel-modal.
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {MatInputModule} from '@angular/material/input';
     DashboardSidebarComponent,
     EditUserModalComponent,
     RegisterImovelModalComponent,
-    EditImovelModalComponent
+    EditImovelModalComponent,
   ],
   exports: [
     LoginFormComponent,
@@ -42,7 +43,12 @@ import {MatInputModule} from '@angular/material/input';
     RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatInputModule
-  ]
+    MatInputModule,
+    MatSelectModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+ 
 })
 export class SharedModule { }

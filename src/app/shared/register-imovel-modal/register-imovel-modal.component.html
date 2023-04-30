@@ -2,32 +2,44 @@
     <div class="modal fadeIn">
         <h2>Cadastrar Imóvel</h2>
         <form [formGroup]="registerImovelForm" (ngSubmit)="submitRegisterImovelForm()">
-            <label for="">Status</label>
-            <select formControlName="status">
-                <option value="Em Estoque">Em Estoque</option>
-                <option value="Vendido">Vendido</option>
-            </select>
-            <span class="errorMessage" *ngIf="isStatusValid">Status Obrigatório</span>
-            
-            <label for="">Imagem</label>
-            <input formControlName="image" id="text" type="text" placeholder="Url da Imagem">
-            <span class="errorMessage" *ngIf="isImgValid">Imagem Obrigatório</span>
+            <mat-form-field class="inputDivs">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status">
+                    <mat-option value="Em Estoque">Em Estoque</mat-option>
+                    <mat-option value="Vendido">Vendido</mat-option>
+                </mat-select>
+                <mat-error *ngIf="isStatusValid">Status Obrigatório</mat-error>
+            </mat-form-field>
 
-            <label for="">Nome do Imóvel</label>
-            <input formControlName="name" id="text" type="text" placeholder="-">
-            <span class="errorMessage" *ngIf="isNameValid">Nome do Imóvel Obrigatória</span>
+            <mat-form-field class="inputDivs">
+                <mat-label>Image</mat-label>
+                <input matInput formControlName="image" id="text" type="text" placeholder="Url da Imagem">
+                <mat-error *ngIf="isImgValid">Imagem Obrigatório</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="inputDivs">
+                <mat-label>Nome do Imóvel</mat-label>
+                <input matInput formControlName="name" id="text" type="text" placeholder="-">
+                <mat-error *ngIf="isNameValid">Nome do Imóvel Obrigatória</mat-error>
+            </mat-form-field>
             
-            <label for="">Valor de Compra</label>
-            <input formControlName="valor_compra" id="text" type="number" placeholder="R$">
-            <span class="errorMessage" *ngIf="isValorCompraValid">Valor de Compra Obrigatória</span>
+            <mat-form-field class="inputDivs">
+                <mat-label>Valor da Compra</mat-label>
+                <input matInput formControlName="valor_compra" id="text" type="number" placeholder="R$">
+                <mat-error *ngIf="isValorCompraValid">Valor de Compra Obrigatória</mat-error>
+            </mat-form-field>
             
-            <label for="">Valor de Venda</label>
-            <input formControlName="valor_venda" id="text" type="number" placeholder="R$">
-            <span class="errorMessage" *ngIf="isValorVendaValid">Valor de Venda Obrigatória</span>
+            <mat-form-field class="inputDivs">
+                <mat-label>Valor de Venda</mat-label>
+                <input matInput formControlName="valor_venda" id="text" type="number" placeholder="R$">
+                <mat-error *ngIf="isValorVendaValid">Valor de Venda Obrigatória</mat-error>
+            </mat-form-field>
             
-            <label for="">Descrição</label>
-            <input formControlName="description" id="text" type="text" placeholder="Descrição do Imovel">
-            <span class="errorMessage" *ngIf="isDescriptionValid">Descrição Obrigatória</span>
+            <mat-form-field class="inputDivs">
+                <mat-label>Descrição</mat-label>
+                <input matInput formControlName="description" id="text" type="text" placeholder="Descrição do Imovel">
+                <mat-error *ngIf="isDescriptionValid">Descrição Obrigatória</mat-error>
+            </mat-form-field>
 
             <button class="cadastrar">Cadastrar</button>
         </form>        

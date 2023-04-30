@@ -6,7 +6,7 @@ border-radius: 4px;
 min-width: 320px;
 position: fixed;
 left: 50%;
-padding: 24px;
+padding: 10px;
 top: 50%;
 transform: translate(-50%, -50%);
 z-index: 11;
@@ -18,6 +18,8 @@ align-items: center;
 
 h2{
 color: var(--white);
+font-size: 20px;
+margin: 5px 0;
 }
 
 .overlay {
@@ -32,8 +34,8 @@ z-index: 10;
 }
 
 form{
-width: 90%;
-height: 70%;
+width: 95%;
+height: 90%;
 padding-top: 10px;
 display: flex;
 flex-direction: column;
@@ -46,20 +48,8 @@ width: 100%;
 color: var(--white);
 }
 
-input{
-width: 97%;
-height: 42px;
-border: 1px solid var(--white);
-border-radius: 4px;
-background-color: var(--input-background);
-color: var(--white);
-padding-left: 10px;
-font-size: 16px;
-}
-
-#text::placeholder {
-color: var(--button-2);
-font-size: 16px;
+.inputDivs{
+width: 100%;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
@@ -69,16 +59,7 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] { 
 -moz-appearance: textfield;
 appearance: textfield;
-
-}
-
-.errorMessage{
-color: var(--error);
-width: 100%;
-height: 10px;
-padding: 0;
-font-size: 12px;
-}
+} 
 
 select{
 width: 100%;
@@ -89,7 +70,6 @@ background-color: var(--input-background);
 color: var(--white);
 padding-left: 10px;
 font-size: 16px;
-
 }
 
 .editar{
