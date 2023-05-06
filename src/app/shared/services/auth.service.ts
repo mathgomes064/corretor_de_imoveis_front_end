@@ -26,7 +26,7 @@ export class AuthService {
         return this.router.navigate([''])
       }),
       catchError((err) =>{
-          return throwError(() => console.log(err))
+          return throwError(() => err)
       })
     )
   }

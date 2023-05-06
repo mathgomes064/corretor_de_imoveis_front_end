@@ -10,6 +10,12 @@ justify-content: space-around;
 align-items: center;
 }
 
+@media (width < 375px){
+    .container{
+        width: 310px;
+    }
+}
+
 div{
 width: 90%;
 height: 12%;

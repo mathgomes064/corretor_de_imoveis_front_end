@@ -63,7 +63,7 @@ export class RegisterFormComponent implements OnInit {
         ...this.registerForm.value
       }).subscribe({
         next: (res) => res,
-        error: (err) => err
+        error: (err) => console.log(err.error.message)
       })
     }
   }

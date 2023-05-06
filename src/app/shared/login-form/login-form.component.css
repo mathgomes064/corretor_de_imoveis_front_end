@@ -9,6 +9,12 @@ justify-content: center;
 align-items: center;
 }
 
+@media (width < 375px){
+    .container{
+        width: 310px;
+    }
+}
+
 h2{
 color: var(--white);
 font-size: 20px;
