@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailImovelComponent } from './detail-imovel/detail-imovel.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DetailImovelComponent } from './detail-imovel/detail-imovel.component';
     CommonModule,
     PagesRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ]
 })
 export class PagesModule { }

@@ -1,11 +1,6 @@
-<header class="slideInDown">
+<header class="slideInDown firstHeader">
     <div>
-        <h1>Bem Vindo! <button class="dropdown" mat-button [matMenuTriggerFor]="menu">{{userData?.name}}</button></h1>
-        <mat-menu class="dropdownOptions" #menu="matMenu">
-            <button class="options" mat-menu-item>Editar Usuário</button>
-            <button class="options" mat-menu-item>Cadastrar Imóvel</button>
-            <button class="options" mat-menu-item>Acessar Dashboard</button>
-        </mat-menu> 
+        <h1>Bem Vindo! {{userData?.name}}</h1>
         <button class="logOut" (click)="deslogar()">Sair</button>
     </div>
 </header>

@@ -3,6 +3,74 @@ width: 100vw;
 height: 100vh;
 }
 
+/* second header */
+.secondHeader{
+width: 100vw;
+height: 57px;
+border-bottom: 2px solid var(--background-modal);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+@media (width > 1163px){
+.secondHeader{
+    display: none;
+}
+}
+
+.innerDiv{
+width: 97%;
+height: 57px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+h1{
+font-size: 18px;
+color: var(--white);
+margin: 0;
+}
+
+.dropdown{
+width: auto;
+font-size: 18px;
+color: var(--white);
+background-color: transparent;
+border: none;
+cursor: pointer;
+position: relative;
+}
+
+.dropdown::after{
+content: " ";
+width: 0%;
+height: 2px;
+position: absolute;
+bottom: 0;
+left: 0;
+transition: 0.3s ease-in-out;
+}
+
+.dropdown:hover::after{
+width: 100%;
+background-image: linear-gradient(to bottom right, #ffff, #ffff);
+}
+
+.logOut{
+width: 70px;
+height: 40px;
+border-radius: 4px;
+background-color: var(--background-modal);
+color: var(--white);
+border: none;
+cursor: pointer;
+font-size: 16px;
+font-weight: 700;
+}
+/* second header */
+
 section{
 margin-top: 10px;
 width: 100vw;
@@ -13,7 +81,7 @@ justify-content: center;
 }
 
 div{
-width: 97.5%;
+width: 97%;
 height: 100%;
 display: flex;
 justify-content: space-between;
@@ -26,6 +94,12 @@ height: 100%;
 border-radius: 4px;
 }
 
+@media (width < 1163px){
+.sidebarDiv{
+    display: none;
+}
+}
+
 .buttonContainer{
 padding-top: 10px;
 width: 100%;
@@ -36,7 +110,7 @@ justify-content: space-between;
 align-items: center;
 }
 
-button{
+.sidebarButton{
 width: 95%;
 height: 50px;
 cursor: pointer;
@@ -47,7 +121,7 @@ font-size: 14px;
 font-weight: 700;
 }
 
-button:hover{
+.sidebarButton:hover{
 background-color: var(--input-background);
 transition: 144ms;
 }

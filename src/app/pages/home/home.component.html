@@ -1,13 +1,24 @@
 
 <main>
     <app-header></app-header>
+    <header class="slideInDown secondHeader">
+        <div class="innerDiv">
+            <h1>Bem Vindo! <button class="dropdown" mat-button [matMenuTriggerFor]="menu">{{userData?.name}}</button></h1>
+            <mat-menu #menu="matMenu">
+                <button (click)="editUserModal.toggle()" mat-menu-item>Editar Usuário</button>
+                <button (click)="registerImovelModal.toggle()" mat-menu-item>Cadastrar Imóvel</button>
+                <button [routerLink]="['/dashboard']" mat-menu-item>Acessar Dashboard</button>
+            </mat-menu> 
+            <button class="logOut" (click)="deslogar()">Sair</button>
+        </div>
+    </header>
     <section>
         <div>
             <div class="slideInLeft sidebarDiv">
                 <div class="buttonContainer">
-                    <button (click)="editUserModal.toggle()">Editar usuário</button>
-                    <button (click)="registerImovelModal.toggle()">Cadastrar Imóvel</button>
-                    <button [routerLink]="['/dashboard']">Acessar Dashboard</button> 
+                    <button class="sidebarButton" (click)="editUserModal.toggle()">Editar usuário</button>
+                    <button class="sidebarButton" (click)="registerImovelModal.toggle()">Cadastrar Imóvel</button>
+                    <button class="sidebarButton" [routerLink]="['/dashboard']">Acessar Dashboard</button> 
                 </div>
             </div>
             <cards-container></cards-container>
